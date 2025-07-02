@@ -61,16 +61,20 @@ int kruskal(TAresta* arestas, int* pai, int* rank, int qtdVertices) {
 }
 
 int main() {
-    int max_aresta = 10;
+    int max_aresta = 100;
     TAresta* arestas = malloc(sizeof(TAresta) * max_aresta);
     int cont = 0;
 
-    int pai[1000] = {0};
-    int rank[1000] = {0};
-    int vertices_unicos[1000] = {0};
+    int vertices = 0;
+    int linhas = 0;
+    scanf("%d %d", &vertices, &linhas);
+
+    int pai[100] = {0};
+    int rank[100] = {0};
+    int vertices_unicos[100] = {0};
     int qtdVertices = 0;
 
-    while (cont < 7) {
+    while (cont < linhas) {
         int v1 = 0, v2 = 0, peso = 0;
 
         if (cont == max_aresta - 2) { // Verifica quantidade limite de arestas
